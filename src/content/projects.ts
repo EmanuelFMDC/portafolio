@@ -21,6 +21,7 @@ export const projects: Project[] = [
       "PWA que conecta arrendadores e inquilinos con búsqueda, reservas y chat en tiempo real.",
     role: "Frontend completo",
     stack: ["React", "TypeScript", "Redux Toolkit", "WebSockets", "MUI"],
+    image: "/proyectos/marketplace/portada.jpg",
   },
   {
     slug: "plataforma-reparaciones",

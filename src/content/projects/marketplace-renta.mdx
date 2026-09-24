@@ -8,15 +8,32 @@ Arrendadores e inquilinos necesitaban encontrarse, reservar y hablar sin salir d
 
 Construí el frontend completo: la arquitectura, el manejo de estado y más de 25 pantallas, incluida la mensajería en tiempo real.
 
+## Cómo funciona
+
+- **Acceso.** Correo y contraseña, inicio con Google, registro y entrada como invitado para explorar sin cuenta.
+- **Panel del anfitrión.** Resumen de la semana, propiedades, solicitudes, pagos y mensajes en pestañas. Muestra cuántas propiedades lleva publicadas frente al límite de su plan y si su cuenta está verificada.
+- **Dos idiomas.** Toda la interfaz cambia entre español e inglés desde el encabezado.
+- **Cuenta.** Perfil, métodos de pago, idioma, soporte y políticas.
+
+<PhoneGallery
+  caption="Solo tres pantallas: los datos de usuarios reales, el nombre y el logo del producto están ocultos."
+  images={[
+    { src: "/proyectos/marketplace/login.png", width: 367, height: 576, alt: "Pantalla de inicio de sesión con correo, contraseña, Google y entrada como invitado" },
+    { src: "/proyectos/marketplace/anfitrion-resumen.jpg", width: 900, height: 1876, alt: "Resumen del anfitrión con pestañas, propiedades publicadas y cuenta verificada" },
+    { src: "/proyectos/marketplace/cuenta.png", width: 397, height: 886, alt: "Pantalla de cuenta con perfil, métodos de pago, idiomas, soporte y privacidad" },
+  ]}
+/>
+
 ## Decisiones técnicas
 
 - **Estado global con Redux Toolkit.** {/* TODO: por qué Redux Toolkit y no otra opción. */}
 - **Chat con WebSockets.** {/* TODO: cómo manejaste reconexión, mensajes pendientes y estado de lectura. */}
+- **Interfaz en dos idiomas.** {/* TODO: cómo organizaste las traducciones (librería, archivos por idioma). */}
 - **Pruebas en tres niveles.** Vitest y React Testing Library para componentes, Playwright para los flujos de búsqueda, reserva y chat.
 
 ## Resultado
 
-{/* TODO: números concretos (pantallas, endpoints, cobertura, tiempos). Las capturas van sin logos ni nombres del producto. */}
+{/* TODO: números concretos (pantallas, endpoints, cobertura, tiempos). */}
 
 ## Qué haría diferente
 
