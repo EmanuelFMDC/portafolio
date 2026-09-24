@@ -67,10 +67,12 @@ export default async function ProjectPage({
             <dt className="text-sm text-faint">Rol</dt>
             <dd className="mt-1">{project.role}</dd>
           </div>
-          <div>
-            <dt className="text-sm text-faint">Stack</dt>
-            <dd className="mt-1">{project.stack.join(", ")}</dd>
-          </div>
+          {project.stack.length > 0 && (
+            <div>
+              <dt className="text-sm text-faint">Stack</dt>
+              <dd className="mt-1">{project.stack.join(", ")}</dd>
+            </div>
+          )}
         </dl>
 
         {links.length > 0 && (
@@ -95,6 +97,7 @@ export default async function ProjectPage({
       <ImageSlot
         src={project.image}
         alt={`Captura de ${project.title}`}
+        size={project.imageSize}
         priority
         sizes="(min-width: 768px) 720px, 100vw"
         className="mt-12"

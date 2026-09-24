@@ -6,6 +6,7 @@ import { ImageSlot } from "@/components/image-slot";
 import { SectionHeading } from "@/components/home/section-heading";
 
 function StackList({ items }: { items: string[] }) {
+  if (items.length === 0) return null;
   return (
     <ul className="flex flex-wrap gap-x-4 gap-y-1 font-mono text-xs text-faint">
       {items.map((item) => (
@@ -96,7 +97,9 @@ export function Projects() {
         <FeaturedCard project={second} />
       </div>
 
-      <div className="mt-10 grid gap-4 md:grid-cols-2">
+      <div
+        className={`mt-10 grid gap-4 md:grid-cols-2 ${rest.length % 3 === 0 ? "lg:grid-cols-3" : ""}`}
+      >
         {rest.map((project) => (
           <CompactCard key={project.slug} project={project} />
         ))}

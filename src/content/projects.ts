@@ -6,6 +6,8 @@ export type Project = {
   stack: string[];
   // Ruta en /public. Sin imagen se muestra un espacio reservado.
   image?: string;
+  // Tamaño real de la imagen; la portada del caso usa su proporción.
+  imageSize?: { width: number; height: number };
   demo?: string;
   repo?: string;
 };
@@ -29,6 +31,17 @@ export const projects: Project[] = [
     stack: ["React", "TypeScript", "Redux Toolkit", "Tailwind"],
   },
   {
+    slug: "portal-soporte",
+    title: "Portal de soporte con tickets",
+    summary:
+      "Panel donde las empresas cliente levantan y siguen tickets de soporte y diseño, con acceso por Google.",
+    // TODO: confirmar el rol y el stack.
+    role: "Desarrollo",
+    stack: [],
+    image: "/proyectos/portal-soporte/tickets.png",
+    imageSize: { width: 1865, height: 961 },
+  },
+  {
     slug: "automatizacion-facturacion",
     title: "Automatización de gastos y facturas",
     summary:
@@ -36,6 +49,7 @@ export const projects: Project[] = [
     role: "Desarrollo completo",
     stack: ["Google Apps Script", "JavaScript", "HTML", "CSS"],
     image: "/proyectos/automatizacion/tipo-de-captura.png",
+    imageSize: { width: 1078, height: 607 },
   },
   {
     slug: "portafolio",
