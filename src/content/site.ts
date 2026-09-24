@@ -6,7 +6,7 @@ export const site = {
   role: "Desarrollador Frontend",
   stackLine: "React y TypeScript",
   tagline:
-    "Construyo aplicaciones web completas, de la arquitectura a las pruebas end‑to‑end.",
+    "Construyo aplicaciones web completas, de la arquitectura a las pruebas end-to-end.",
   description:
     "Desarrollador frontend con 4+ años en React y TypeScript. Construyo aplicaciones web completas, de la arquitectura a las pruebas end-to-end.",
   location: "Guadalajara, abierto a remoto",

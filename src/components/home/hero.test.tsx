@@ -11,6 +11,13 @@ describe("Hero", () => {
     expect(h1).toHaveTextContent(site.stackLine);
   });
 
+  it("muestra la frase completa sin partir las palabras con guion", () => {
+    render(<Hero />);
+    const tagline = screen.getByText((_, el) => el?.tagName === "P" && el.textContent === site.tagline);
+    expect(tagline).toBeInTheDocument();
+    expect(screen.getByText("end-to-end.")).toHaveClass("whitespace-nowrap");
+  });
+
   it("tiene el CV descargable y el link a contacto", () => {
     render(<Hero />);
     const cv = screen.getByRole("link", { name: /descargar cv/i });

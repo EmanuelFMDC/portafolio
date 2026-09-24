@@ -15,8 +15,9 @@ describe("contenido", () => {
     }
   });
 
-  // Regla de estilo del sitio: nada de rayas largas en el texto visible.
-  it("no usa raya (—) ni guion medio (–) en el texto", () => {
+  // Rayas largas: regla de estilo del sitio.
+  // Guion no separable (U+2011): Geist no lo incluye y se ve como un cuadro.
+  it("no usa raya (—), guion medio (–) ni guion no separable en el texto", () => {
     const texts = [
       JSON.stringify(siteContent),
       JSON.stringify(projects),
@@ -25,7 +26,7 @@ describe("contenido", () => {
       ),
     ];
     for (const text of texts) {
-      expect(text).not.toMatch(/[—–]/);
+      expect(text).not.toMatch(/[—–‑]/);
     }
   });
 });
