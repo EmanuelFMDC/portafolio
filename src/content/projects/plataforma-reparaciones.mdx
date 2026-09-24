@@ -6,6 +6,43 @@ Un mismo producto con dos usuarios muy distintos: el cliente que pide una repara
 
 Construí el frontend de los dos flujos: solicitud, seguimiento de estado, perfiles y calificaciones.
 
+## Cómo funciona
+
+Cada tipo de usuario tiene su propia navegación: el cliente usa una barra inferior clásica y el proveedor una barra flotante.
+
+### App del cliente
+
+- **Inicio.** Muestra la solicitud activa y un acceso directo para crear un servicio.
+- **Crear servicio.** Tipo de servicio, dirección guardada y descripción del problema. Si no hay direcciones, ofrece agregar una ahí mismo.
+- **Perfil.** Información personal, métodos de pago, direcciones, configuración, privacidad y ayuda.
+
+<PhoneGallery
+  width={900}
+  height={1876}
+  images={[
+    { src: "/proyectos/reparaciones/cliente-inicio.jpg", alt: "Inicio del cliente con la solicitud activa y el botón Crear servicio" },
+    { src: "/proyectos/reparaciones/cliente-crear-servicio.jpg", alt: "Formulario Crear servicio con tipo, dirección y descripción del problema" },
+    { src: "/proyectos/reparaciones/cliente-perfil.jpg", alt: "Perfil del cliente con cuenta, métodos de pago, direcciones y preferencias" },
+  ]}
+/>
+
+### App del proveedor
+
+- **Disponibilidad.** El proveedor mantiene presionado un botón para ponerse activo o inactivo, y un cronómetro muestra cuánto tiempo lleva activo.
+- **Estadísticas.** Ingresos, servicios completados y activos, y promedio por servicio, con filtro por periodo y una gráfica de ingresos.
+- **Calificaciones.** Promedio, distribución por estrellas y comentarios recientes de clientes.
+
+<PhoneGallery
+  width={900}
+  height={1876}
+  caption="Los nombres de clientes y del proveedor están ocultos."
+  images={[
+    { src: "/proyectos/reparaciones/proveedor-inicio.jpg", alt: "Inicio del proveedor con su estado activo, cronómetro y botón para cambiar estado" },
+    { src: "/proyectos/reparaciones/proveedor-estadisticas.jpg", alt: "Estadísticas del proveedor con ingresos, servicios y gráfica del periodo" },
+    { src: "/proyectos/reparaciones/proveedor-calificaciones.jpg", alt: "Calificación promedio del proveedor con distribución por estrellas y comentarios" },
+  ]}
+/>
+
 ## Decisiones técnicas
 
 - **Flujos separados por tipo de usuario.** {/* TODO: cómo separaste rutas, permisos y componentes compartidos. */}
@@ -14,7 +51,7 @@ Construí el frontend de los dos flujos: solicitud, seguimiento de estado, perfi
 
 ## Resultado
 
-{/* TODO: diagrama de los dos flujos, capturas anonimizadas y números. */}
+{/* TODO: números (pantallas, usuarios de prueba, tiempos) y un diagrama de los dos flujos. */}
 
 ## Qué haría diferente
 

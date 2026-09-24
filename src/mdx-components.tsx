@@ -33,8 +33,44 @@ function Figure({
 }
 
 // Estilos de los casos de proyecto. Se aplican a todo archivo .mdx.
+// Pantallas de celular lado a lado. Todas deben compartir tamaño (width x height).
+function PhoneGallery({
+  images,
+  width,
+  height,
+  caption,
+}: {
+  images: { src: string; alt: string }[];
+  width: number;
+  height: number;
+  caption?: string;
+}) {
+  return (
+    <figure className="my-10">
+      {/* En celular se desliza de lado; desde sm se ven las tres en fila. */}
+      <div className="-mx-4 flex snap-x snap-mandatory scroll-px-4 gap-4 overflow-x-auto px-4 pb-2 sm:mx-0 sm:grid sm:grid-cols-3 sm:overflow-visible sm:px-0 sm:pb-0">
+        {images.map((img) => (
+          <Image
+            key={img.src}
+            src={img.src}
+            alt={img.alt}
+            width={width}
+            height={height}
+            sizes="(min-width: 768px) 230px, 60vw"
+            className="w-[60%] shrink-0 snap-start rounded-2xl border border-line sm:w-full"
+          />
+        ))}
+      </div>
+      {caption && (
+        <figcaption className="mt-3 text-sm text-faint">{caption}</figcaption>
+      )}
+    </figure>
+  );
+}
+
 const components: MDXComponents = {
   Figure,
+  PhoneGallery,
   h2: ({ children }) => (
     <h2 className="mt-14 text-xl font-semibold tracking-tight text-fg first:mt-0">
       {children}
