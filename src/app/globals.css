@@ -1,0 +1,127 @@
+@import "tailwindcss";
+
+/* Tokens de color. Un solo acento en todo el sitio. */
+:root {
+  --bg: #fafafa;
+  --surface: #f0f0f2;
+  --fg: #18181b;
+  --muted: #52525b;
+  --faint: #6b6b74;
+  --line: #e4e4e7;
+  --line-strong: #c4c4cc;
+  --accent: #2b4fd8;
+  --accent-fg: #fafafa;
+  color-scheme: light;
+
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Sin JS se respeta el modo del sistema. Con JS manda data-theme. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e0e10;
+    --surface: #18181b;
+    --fg: #ededef;
+    --muted: #a1a1aa;
+    --faint: #8b8b94;
+    --line: #26262b;
+    --line-strong: #3a3a41;
+    --accent: #8aa4ff;
+    --accent-fg: #0e0e10;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #0e0e10;
+  --surface: #18181b;
+  --fg: #ededef;
+  --muted: #a1a1aa;
+  --faint: #8b8b94;
+  --line: #26262b;
+  --line-strong: #3a3a41;
+  --accent: #8aa4ff;
+  --accent-fg: #0e0e10;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-accent: var(--accent);
+  --color-accent-fg: var(--accent-fg);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+html {
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-fg);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Respuesta al presionar botones y links principales. */
+.press {
+  transition:
+    transform 160ms var(--ease-out),
+    background-color 200ms ease,
+    border-color 200ms ease,
+    color 200ms ease;
+}
+.press:active {
+  transform: scale(0.97);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Entrada del hero: una sola vez, escalonada con --i. */
+  .enter {
+    animation: enter 700ms var(--ease-out) both;
+    animation-delay: calc(var(--i, 0) * 70ms);
+  }
+
+  /* Aparición al hacer scroll, solo CSS. Sin soporte, el contenido se ve normal. */
+  @supports (animation-timeline: view()) {
+    .reveal {
+      animation: reveal linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 35%;
+    }
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@keyframes enter {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+}

@@ -1,0 +1,18 @@
+## Contexto y problema
+
+Necesitaba un sitio que un reclutador entienda en menos de 30 segundos y que un líder técnico pueda revisar a fondo. El sitio también es un proyecto: el código es público.
+
+## Mi rol y alcance
+
+Diseño, desarrollo, pruebas y despliegue.
+
+## Decisiones técnicas
+
+- **Next.js con App Router.** Es el siguiente paso de mi stack React. Casi todo se renderiza en el servidor y el sitio carga muy poco JavaScript.
+- **Casos en MDX.** Agregar un proyecto es agregar un archivo, sin tocar componentes.
+- **Animaciones solo con CSS.** Respetan `prefers-reduced-motion` y no agregan peso al bundle.
+- **Pruebas y CI.** Vitest y React Testing Library para componentes, Playwright para la navegación. GitHub Actions corre lint y pruebas en cada pull request.
+
+## Resultado
+
+{/* TODO: puntaje de Lighthouse, link al repo y estado del CI al lanzar. */}

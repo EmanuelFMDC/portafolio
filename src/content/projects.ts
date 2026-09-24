@@ -1,0 +1,52 @@
+export type Project = {
+  slug: string;
+  title: string;
+  summary: string;
+  role: string;
+  stack: string[];
+  // Ruta en /public. Sin imagen se muestra un espacio reservado.
+  image?: string;
+  demo?: string;
+  repo?: string;
+};
+
+// El orden es el del brief: los marketplaces primero.
+export const projects: Project[] = [
+  {
+    slug: "marketplace-renta",
+    title: "Marketplace de renta de cuartos y casas",
+    summary:
+      "PWA que conecta arrendadores e inquilinos con búsqueda, reservas y chat en tiempo real.",
+    role: "Frontend completo",
+    stack: ["React", "TypeScript", "Redux Toolkit", "WebSockets", "MUI"],
+  },
+  {
+    slug: "plataforma-reparaciones",
+    title: "Plataforma de reparaciones del hogar",
+    summary:
+      "PWA tipo Uber con flujos separados para clientes y proveedores sobre el mismo producto.",
+    role: "Frontend completo",
+    stack: ["React", "TypeScript", "Redux Toolkit", "Tailwind"],
+  },
+  {
+    slug: "automatizacion-facturacion",
+    title: "Automatización de facturación",
+    summary:
+      "Script que reemplazó la facturación manual en Excel de ventas y compras.",
+    role: "Desarrollo completo",
+    stack: ["Google Apps Script"],
+  },
+  {
+    slug: "portafolio",
+    title: "Este portafolio",
+    summary:
+      "Sitio en Next.js con pruebas, CI y despliegue continuo. El código es público.",
+    role: "Diseño, desarrollo y despliegue",
+    stack: ["Next.js", "TypeScript", "Tailwind", "Vitest", "Playwright"],
+    // TODO: agregar la URL del repo cuando sea público.
+  },
+];
+
+export function getProject(slug: string) {
+  return projects.find((p) => p.slug === slug);
+}
