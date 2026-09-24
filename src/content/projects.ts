@@ -36,9 +36,9 @@ export const projects: Project[] = [
     title: "Portal de soporte con tickets",
     summary:
       "Panel donde las empresas cliente levantan y siguen tickets de soporte y diseño, con acceso por Google.",
-    // TODO: confirmar el rol y el stack.
+    // TODO: confirmar el rol.
     role: "Desarrollo",
-    stack: [],
+    stack: ["React", "TypeScript", "Redux", "Tailwind", "Vitest", "Playwright"],
     image: "/proyectos/portal-soporte/tickets.png",
     imageSize: { width: 1865, height: 961 },
   },
