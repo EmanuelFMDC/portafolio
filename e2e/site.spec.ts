@@ -48,6 +48,14 @@ test.describe("proyectos", () => {
     await expect(page).toHaveURL(/\/#proyectos$/);
   });
 
+  test("los sitios en línea abren en otra pestaña", async ({ page }) => {
+    await page.goto("/");
+    const site = page.getByRole("link", { name: /Decoder/ });
+    await expect(site).toHaveAttribute("href", "https://decoder.mx");
+    await expect(site).toHaveAttribute("target", "_blank");
+    await expect(site.getByRole("img")).toBeVisible();
+  });
+
   test("un proyecto que no existe da 404", async ({ page }) => {
     const response = await page.goto("/proyectos/no-existe");
     expect(response?.status()).toBe(404);

@@ -75,7 +75,28 @@ export const stack = [
 
 export const learning = ["Next.js", "Node.js"];
 
-// Sitios freelance que siguen en línea. La sección se oculta mientras esté vacía.
-// TODO: revisar cuáles siguen en línea y agregarlos aquí.
+// Sitios que siguen en línea. La sección se oculta si la lista está vacía.
+// Capturas en /public/freelance a 1440x900.
 export const freelanceSites: { name: string; url: string; image?: string }[] =
-  [];
+  [
+    {
+      name: "Nahual Consultores",
+      url: "https://www.nahualconsultores.com",
+      image: "/freelance/nahual-consultores.jpg",
+    },
+    {
+      name: "Decoder",
+      url: "https://decoder.mx",
+      image: "/freelance/decoder.jpg",
+    },
+    {
+      name: "Inmerza 360",
+      url: "https://inmerza360.com",
+      image: "/freelance/inmerza360.jpg",
+    },
+    {
+      name: "Blackfire",
+      url: "https://www.blackfiremx.com",
+      image: "/freelance/blackfire.jpg",
+    },
+  ];

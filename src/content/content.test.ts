@@ -15,6 +15,17 @@ describe("contenido", () => {
     }
   });
 
+  it("las imágenes referenciadas existen en /public", () => {
+    const publicDir = join(__dirname, "..", "..", "public");
+    const images = [
+      ...projects.map((p) => p.image),
+      ...siteContent.freelanceSites.map((s) => s.image),
+    ].filter((src): src is string => Boolean(src));
+    for (const src of images) {
+      expect(existsSync(join(publicDir, src)), src).toBe(true);
+    }
+  });
+
   // Rayas largas: regla de estilo del sitio.
   // Guion no separable (U+2011): Geist no lo incluye y se ve como un cuadro.
   it("no usa raya (—), guion medio (–) ni guion no separable en el texto", () => {
