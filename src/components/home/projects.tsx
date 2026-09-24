@@ -104,7 +104,7 @@ export function Projects() {
 
       {freelanceSites.length > 0 && (
         <div className="mt-20">
-          <h3 className="font-semibold">Sitios freelance en línea</h3>
+          <h3 className="font-semibold">Sitios web en línea</h3>
           <ul className="mt-6 grid grid-cols-2 gap-4 md:grid-cols-4">
             {freelanceSites.map((s) => (
               <li key={s.url}>

@@ -30,11 +30,12 @@ export const projects: Project[] = [
   },
   {
     slug: "automatizacion-facturacion",
-    title: "Automatización de facturación",
+    title: "Automatización de gastos y facturas",
     summary:
-      "Script que reemplazó la facturación manual en Excel de ventas y compras.",
+      "App en Google Apps Script que lee el CFDI XML y llena la factura sola. Reemplazó la captura manual en Excel.",
     role: "Desarrollo completo",
-    stack: ["Google Apps Script"],
+    stack: ["Google Apps Script", "JavaScript", "HTML", "CSS"],
+    image: "/proyectos/automatizacion/tipo-de-captura.png",
   },
   {
     slug: "portafolio",

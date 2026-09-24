@@ -1,7 +1,40 @@
+import Image from "next/image";
 import type { MDXComponents } from "mdx/types";
+
+// Captura dentro de un caso: <Figure src="/..." width={} height={} alt="" caption="" />
+function Figure({
+  src,
+  alt,
+  width,
+  height,
+  caption,
+}: {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  caption?: string;
+}) {
+  return (
+    <figure className="my-10">
+      <Image
+        src={src}
+        alt={alt}
+        width={width}
+        height={height}
+        sizes="(min-width: 768px) 720px, 100vw"
+        className="w-full rounded-xl border border-line"
+      />
+      {caption && (
+        <figcaption className="mt-3 text-sm text-faint">{caption}</figcaption>
+      )}
+    </figure>
+  );
+}
 
 // Estilos de los casos de proyecto. Se aplican a todo archivo .mdx.
 const components: MDXComponents = {
+  Figure,
   h2: ({ children }) => (
     <h2 className="mt-14 text-xl font-semibold tracking-tight text-fg first:mt-0">
       {children}
