@@ -2,6 +2,20 @@ import { ArrowRight, DownloadSimple, MapPin } from "@phosphor-icons/react/ssr";
 import { facts, site } from "@/content/site";
 import { SocialLinks } from "@/components/social-links";
 
+// Evita que palabras con guion ("end-to-end") se partan entre líneas.
+// Se usa CSS en lugar de guiones no separables porque Geist no los incluye.
+function NoBreakHyphens({ text }: { text: string }) {
+  return text.split(/(\S+-\S+)/).map((part, i) =>
+    i % 2 === 1 ? (
+      <span key={i} className="whitespace-nowrap">
+        {part}
+      </span>
+    ) : (
+      part
+    ),
+  );
+}
+
 export function Hero() {
   return (
     <section className="mx-auto grid max-w-6xl gap-12 px-4 pb-20 pt-16 sm:px-6 md:pt-24 lg:grid-cols-[1.4fr_1fr] lg:items-end lg:gap-16">
@@ -20,7 +34,7 @@ export function Hero() {
           className="enter mt-6 max-w-[46ch] text-lg leading-relaxed text-muted"
           style={{ "--i": 2 } as React.CSSProperties}
         >
-          {site.tagline}
+          <NoBreakHyphens text={site.tagline} />
         </p>
         <div
           className="enter mt-10 flex flex-wrap items-center gap-3"
