@@ -29,6 +29,7 @@ export const projects: Project[] = [
       "PWA tipo Uber con flujos separados para clientes y proveedores sobre el mismo producto.",
     role: "Frontend completo",
     stack: ["React", "TypeScript", "Redux Toolkit", "Tailwind"],
+    image: "/proyectos/reparaciones/portada.jpg",
   },
   {
     slug: "portal-soporte",
